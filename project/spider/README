@@ -1,0 +1,4 @@
+readme
+- ArticleContent: Extracts content from headlines
+- Keywords: Performs TextRank based on a modified version of homework 4 (TextRank.py)
+- Headlines: Extracts headlines from elcomercio.pe

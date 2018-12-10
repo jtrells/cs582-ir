@@ -1,0 +1,27 @@
+cs582 Information Retrieval
+Homework 4
+Juan Trelles
+
+1. Instructions
+   Install the required packages numpy and nltk with pip3 numpy nltk
+   Run: python3 src/run.py PATH_TO_ROOT_FOLDER IGNORE_NEW_LINES
+   PATH_TO_ROOT_FOLDER Path to www collection (folder that contains the abstracts and gold folders)
+   IGNORE_NEW_LINES 1 to consider the whole file as one sentence, 0 to respect the line breaks when forming n_grams
+
+2. Files
+   Graph: Simple class to keep the graph matrix for one document and the headers indices (word mapping to columns)
+   hw4_utils: tokenizing util functions
+   TextRank: PageRank implementation using matrix notation. Ranking stops by number of iterations or convergence. By
+      default I'm using a tolerance of 1e-6.
+   AbstractProcessor: Class that process a file, extracts tokens, creates n_grams, and calculates MRR for k=1 to 10 for
+      the given file.
+   hw4: Calculates the MRR of the collection. Each document returns a unit vector with the 10 values for the MRR given k.
+      The function sums the columns and divides by the number of elements in the collection to get the MRR.
+   hw4.ipynb: Jupyter notebook with an example run and a graph for the MRR.
+
+3. About MRR
+   For a given k, r is the first element that matches a value in the gold standard. Thus, if for k = i, r had a match,
+   then all the elements k = i + 1, i + 2, ... will have the same value.
+
+4. Test
+   I tested the code on Windows and on the testing environment on bertvm.
